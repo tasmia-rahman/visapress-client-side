@@ -18,7 +18,7 @@ const ServiceCard = ({ service }) => {
                         <p>{description.substring(0, 100) + '...'}</p>
                     </Card.Text>
                     <Button variant="primary">
-                        <Link className='text-white no-underline'>View Details</Link>
+                        <Link to={`/services/${_id}`} className='text-white no-underline'>View Details</Link>
                     </Button>
                 </Card.Body>
             </Card>
