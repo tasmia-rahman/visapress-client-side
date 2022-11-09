@@ -8,7 +8,7 @@ import { FaInstagram } from "react-icons/fa";
 const Footer = () => {
     return (
         <div className='footer'>
-            <h3 className='text-center'>Teach<span className='blue-color'>Me</span></h3>
+            <h3 className='text-center'>Teach<span className='red-color'>Me</span></h3>
             <hr />
             <Nav className="justify-content-center footer-links">
                 <Nav.Item>

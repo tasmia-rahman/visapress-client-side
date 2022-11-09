@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Home from "../../pages/Home/Home/Home";
-import Courses from "../../pages/Courses/Courses/Courses";
 import Blog from "../../pages/Blog/Blog/Blog";
 import Error from "../../pages/Error/Error/Error";
-import CourseDetail from "../../pages/Courses/CourseDetail/CourseDetail";
 import Register from "../../pages/Login/Register/Register";
 import Login from "../../pages/Login/Login/Login";
+import Services from "../../pages/Services/Services/Services";
+import ServiceDetail from "../../pages/Services/ServiceDetail/ServiceDetail";
 
 export const routes = createBrowserRouter([
     {
@@ -23,11 +23,11 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/services',
-                element: <Courses></Courses>
+                element: <Services></Services>
             },
             {
                 path: '/services/:id',
-                element: <CourseDetail></CourseDetail>
+                element: <ServiceDetail></ServiceDetail>
             },
             {
                 path: '/blog',

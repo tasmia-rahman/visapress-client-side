@@ -3,7 +3,7 @@
 }
 
 .header-links a:hover {
-    color: #3ca1db;
+    color: rgb(190 18 60);
 }
 
 .theme-btn {
@@ -16,6 +16,6 @@
     color: white;
 }
 
-.blue-color {
-    color: #3ca1db;
+.red-color {
+    color: rgb(190 18 60);
 }
