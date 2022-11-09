@@ -3,14 +3,14 @@ import Container from 'react-bootstrap/Container';
 import './Home.css';
 import Banner from '../Banner/Banner';
 import About from '../About/About';
-import Services from '../Services/Services/Services';
+import HomeServices from '../Services/HomeServices/HomeServices';
 
 const Home = () => {
     return (
         <Container fluid className='home-container'>
             <Banner></Banner>
             <About></About>
-            <Services></Services>
+            <HomeServices></HomeServices>
         </Container>
     );
 };

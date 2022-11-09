@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
-import ServiceCard from '../ServiceCard/ServiceCard';
+import ServiceCard from '../Home/Services/ServiceCard/ServiceCard';
 
 const Services = () => {
     const [services, setServices] = useState([]);
@@ -15,7 +15,7 @@ const Services = () => {
 
     return (
         <div className='pb-5'>
-            <h3 className='text-center red-color title mb-4'>Services</h3>
+            <h2 className='text-center red-color title mb-4'>Services</h2>
             <Container>
                 <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                     {
