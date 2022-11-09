@@ -1,0 +1,21 @@
+.footer {
+    padding: 50px 0;
+    background-color: #636363;
+    color: white;
+}
+
+.footer-links a {
+    color: #b9b9b9;
+}
+
+.footer-links a:hover {
+    color: #3ca1db;
+}
+
+@media only screen and (max-width: 768px) {
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}

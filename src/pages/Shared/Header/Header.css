@@ -1,0 +1,21 @@
+.logo {
+    width: 70px;
+}
+
+.header-links a:hover {
+    color: #3ca1db;
+}
+
+.theme-btn {
+    padding: 5px 12px;
+    border-radius: 10px;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.blue-color {
+    color: #3ca1db;
+}
