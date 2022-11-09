@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ReviewCard = ({ review }) => {
-    const { userName, photoURL, reviewText } = review;
+    const { userName, photoURL, reviewText, date } = review;
     return (
         <div style={{ width: '500px' }}>
             <div className="container flex flex-col p-6 mx-auto divide-y rounded-md divide-gray-300 bg-gray-50 text-gray-800 my-5">
@@ -12,7 +12,7 @@ const ReviewCard = ({ review }) => {
                         </div>
                         <div>
                             <h4 className="font-bold">{userName}</h4>
-                            <span className="text-xs text-gray-600">2 days ago</span>
+                            <span className="text-xs text-gray-600">{date}</span>
                         </div>
                     </div>
                     <div className="flex items-center space-x-2 text-yellow-500">
