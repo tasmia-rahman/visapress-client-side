@@ -1,7 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
 import { Spinner } from 'react-bootstrap';
-// import { Spinner } from 'react-bootstrap';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import './PrivateRoute.css';
