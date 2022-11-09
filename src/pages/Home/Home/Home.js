@@ -3,7 +3,8 @@ import Container from 'react-bootstrap/Container';
 import './Home.css';
 import Banner from '../Banner/Banner';
 import About from '../About/About';
-import HomeServices from '../Services/HomeServices/HomeServices';
+import HomeServices from '../HomeServices/HomeServices';
+
 
 const Home = () => {
     return (

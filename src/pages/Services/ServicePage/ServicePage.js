@@ -1,5 +1,5 @@
 import React from 'react';
-import Reviews from '../Reviews/Reviews';
+import Reviews from '../Reviews/Reviews/Reviews';
 import ServiceDetail from '../ServiceDetail/ServiceDetail';
 import { useLoaderData } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ const ServicePage = () => {
     return (
         <div>
             <ServiceDetail service={service}></ServiceDetail>
-            <Reviews></Reviews>
+            <Reviews service={service}></Reviews>
         </div>
     );
 };

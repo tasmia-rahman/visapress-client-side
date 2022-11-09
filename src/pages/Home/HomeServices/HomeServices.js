@@ -1,8 +1,9 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Container } from 'react-bootstrap';
-import ServiceCard from '../../../Services/ServiceCard/ServiceCard';
+import { Button, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import ServiceCard from '../../Services/ServiceCard/ServiceCard';
 
 const HomeServices = () => {
     const [services, setServices] = useState([]);
@@ -26,6 +27,9 @@ const HomeServices = () => {
                     }
                 </div>
             </Container>
+            <div className='text-center mt-5'>
+                <Button><Link to='/services' className='text-white no-underline'>See All</Link></Button>
+            </div>
         </div>
     );
 };

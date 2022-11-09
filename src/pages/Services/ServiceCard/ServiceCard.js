@@ -2,13 +2,18 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ServiceCard = ({ service }) => {
     const { _id, name, image, price, description } = service;
     return (
         <div>
             <Card>
-                <Card.Img variant="top" src={image} />
+                <PhotoProvider>
+                    <PhotoView src={image}>
+                        <Card.Img variant="top" src={image} />
+                    </PhotoView>
+                </PhotoProvider>
                 <Card.Body>
                     <Card.Title>
                         <h4 className='red-color'>{name}</h4>

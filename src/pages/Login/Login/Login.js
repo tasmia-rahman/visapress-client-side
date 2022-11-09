@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import { GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
     const { login, setLoading, providerLogin } = useContext(AuthContext);
@@ -33,7 +33,6 @@ const Login = () => {
             })
     }
     const googleProvider = new GoogleAuthProvider();
-    const githubProvider = new GithubAuthProvider();
 
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
@@ -43,16 +42,6 @@ const Login = () => {
             })
             .catch(error => setError(error.message))
     }
-
-    const handleGithubSignIn = () => {
-        providerLogin(githubProvider)
-            .then(result => {
-                const user = result.user;
-                navigate(from, { replace: true });
-            })
-            .catch(error => setError(error.message))
-    }
-
 
     return (
         <div className='form-div'>
@@ -78,9 +67,6 @@ const Login = () => {
             </Form>
             <Button onClick={handleGoogleSignIn} style={{ width: '500px', marginBottom: '15px' }} variant="success">
                 Google
-            </Button>
-            <Button onClick={handleGithubSignIn} style={{ width: '500px', marginBottom: '15px' }} variant="warning">
-                GitHub
             </Button>
         </div>
     );

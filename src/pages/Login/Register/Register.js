@@ -64,11 +64,11 @@ const Register = () => {
                 <Form.Text className='d-block mb-3 text-danger'>
                     {error}
                 </Form.Text>
-                <Button style={{ width: '500px' }} variant="primary" type="submit">
+                <Button style={{ width: '500px' }} className="red-color" type="submit">
                     Register
                 </Button>
             </Form>
-            <h3 className='d-block m-3 text-success text-center'>
+            <h3 className='d-block m-3 red-color text-center'>
                 {
                     success ? 'Registered successfully !!!' : ''
                 }
