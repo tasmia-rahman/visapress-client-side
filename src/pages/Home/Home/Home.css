@@ -2,33 +2,6 @@
     background-color: #F4F4F7;
 }
 
-.about-title {
+.title {
     margin-top: 100px;
-}
-
-.about-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px;
-    padding: 20px 50px 100px;
-}
-
-.about-div {
-    background-color: white;
-}
-
-.about-icons {
-    font-size: 40px;
-    color: #3ca1db;
-}
-
-.btn-primary {
-    background-color: #3ca1db !important;
-    border: none !important;
-}
-
-@media only screen and (max-width: 768px) {
-    .about-container {
-        grid-template-columns: repeat(1, 1fr);
-    }
 }
