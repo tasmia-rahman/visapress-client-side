@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, Container, FloatingLabel, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import ReviewCard from '../ReviewCard/ReviewCard';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Reviews = ({ service }) => {
+    const location = useLocation();
+
     const { user } = useContext(AuthContext);
     const { _id, name } = service;
 
@@ -19,6 +21,7 @@ const Reviews = ({ service }) => {
             .then(data => {
                 setReviews(data);
             })
+            .catch(err => console.error(err))
     }, [name])
 
     const handleAddReview = event => {
@@ -76,7 +79,7 @@ const Reviews = ({ service }) => {
                             <Button className='mt-3' type="submit">Add a review</Button>
                         </Form>
                         :
-                        <h4 className='text-center'>Please <Link to='/login'>login</Link> to add a review</h4>
+                        <h4 className='text-center'>Please <Link to='/login' state={{ from: location }} replace>login</Link> to add a review</h4>
                 }
             </div>
         </Container>

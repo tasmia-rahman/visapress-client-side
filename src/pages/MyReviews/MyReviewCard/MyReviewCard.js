@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 import { HiPencilAlt, HiTrash } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 
-const MyReviewCard = ({ review, handleDelete }) => {
+const MyReviewCard = ({ review, handleUpdateReview, handleDeleteReview }) => {
     const { _id, serviceName, date, reviewText } = review;
 
     return (
@@ -19,7 +19,7 @@ const MyReviewCard = ({ review, handleDelete }) => {
                         <Link to={`/my_reviews/${_id}`} className='red-color text-2xl no-underline mr-5'>
                             <HiPencilAlt></HiPencilAlt>
                         </Link>
-                        <HiTrash onClick={() => handleDelete(_id)} className='red-color text-2xl no-underline'></HiTrash>
+                        <HiTrash onClick={() => handleDeleteReview(_id)} className='red-color text-2xl no-underline'></HiTrash>
                     </div>
                 </Card.Body>
             </Card>

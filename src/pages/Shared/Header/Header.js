@@ -21,7 +21,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
             <Container>
-                <Navbar.Brand href="#home" className='d-flex align-items-center'>
+                <Navbar.Brand href="/" className='d-flex align-items-center'>
                     <img className='logo' src='https://cdn.dribbble.com/users/60166/screenshots/13967952/media/9ea8447026fdcadf66196aa38fcc0207.jpg?compress=1&resize=400x300&vertical=top' alt="" />
                     <h3>Visa<span className='text-rose-700'>Press</span></h3>
                 </Navbar.Brand>

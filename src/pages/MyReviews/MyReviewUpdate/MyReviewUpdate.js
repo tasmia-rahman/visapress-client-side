@@ -1,24 +1,57 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Button, Container, FloatingLabel, Form } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 const MyReviewUpdate = () => {
     const review = useLoaderData();
-    const { _id, serviceName, date, reviewText } = review;
+    const { _id, serviceName } = review;
+
+    const handleUpdateReview = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const updatedReviewText = form.updatedReview.value;
+        console.log(updatedReviewText);
+        form.reset();
+
+        fetch(`http://localhost:5000/my_reviews/${_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({ reviewText: updatedReviewText })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    toast.success('Updated successfully');
+                }
+            })
+            .catch(err => console.error(err))
+    }
 
     return (
-        <div className='d-flex justify-content-center mb-5'>
-            <Card style={{ width: '500px' }}>
-                <Card.Body>
-                    <Card.Title>Service Name: <span className='red-color'>{serviceName}</span></Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">Time: {date}</Card.Subtitle>
-                    <Card.Text>
-                        <span className='font-semibold'>Review:</span> {reviewText}
-                    </Card.Text>
-                </Card.Body>
-            </Card>
-        </div>
+        <Container className='mb-5'>
+            <Toaster />
+            <h3 className='text-center red-color title'>Edit Review</h3>
+            <h4 className='text-center my-4'>Service Name: <span className='red-color'>{serviceName}</span></h4>
+            <div className='d-flex justify-center'>
+                <Form onSubmit={handleUpdateReview}>
+                    <FloatingLabel controlId="floatingTextarea2" label="Comments">
+                        <Form.Control
+                            as="textarea"
+                            placeholder="Leave a comment here"
+                            style={{ height: '180px', width: '500px' }}
+                            name="updatedReview"
+                        />
+                    </FloatingLabel>
+                    <div className='d-flex justify-center'>
+                        <Button className='mt-3' type="submit">Update review</Button>
+                    </div>
+                </Form>
+            </div>
+        </Container>
     );
-};
-
+}
 export default MyReviewUpdate;

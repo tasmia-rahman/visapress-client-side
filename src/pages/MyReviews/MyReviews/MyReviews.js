@@ -16,31 +16,10 @@ const MyReviews = () => {
             .then(data => {
                 setReviews(data);
             })
+            .catch(err => console.error(err))
     }, [user?.email])
 
-    const handleUpdate = id => {
-        fetch(`http://localhost:5000/my_reviews/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify({ status: 'Approved' })
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0) {
-                    // const remaining = orders.filter(odr => odr._id !== id);
-                    // const approving = orders.find(odr => odr._id === id);
-                    // approving.status = 'Approved'
-
-                    // const newOrders = [approving, ...remaining];
-                    // setOrders(newOrders);
-                }
-            })
-    }
-
-    const handleDelete = id => {
+    const handleDeleteReview = id => {
         const proceed = window.confirm('Are you sure, you want to cancel this order');
         if (proceed) {
             fetch(`http://localhost:5000/my_reviews/${id}`, {
@@ -54,6 +33,7 @@ const MyReviews = () => {
                         setReviews(remaining);
                     }
                 })
+                .catch(err => console.error(err))
         }
     }
 
@@ -65,7 +45,7 @@ const MyReviews = () => {
                 reviews.length === 0 ?
                     <h3 className='text-center red-color title mb-4'>No reviews were added</h3>
                     :
-                    reviews.map(review => <MyReviewCard review={review} handleUpdate={handleUpdate} handleDelete={handleDelete}></MyReviewCard>)
+                    reviews.map(review => <MyReviewCard key={review._id} review={review} handleDeleteReview={handleDeleteReview}></MyReviewCard>)
             }
         </Container>
     );

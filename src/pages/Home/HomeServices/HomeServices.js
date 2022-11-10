@@ -12,6 +12,7 @@ const HomeServices = () => {
         fetch('http://localhost:5000/home_services')
             .then(res => res.json())
             .then(data => setServices(data))
+            .catch(err => console.error(err))
     }, []);
 
     return (
