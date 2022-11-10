@@ -11,7 +11,7 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <div className='text-center mt-5'>
+        return <div className='text-center my-5'>
 
             <Spinner animation="border" />
         </div>

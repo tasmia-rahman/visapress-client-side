@@ -6,11 +6,11 @@ import Form from 'react-bootstrap/Form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from "firebase/auth";
-import { Container } from 'react-bootstrap';
+import { Container, Spinner } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
-    const { login, setLoading, providerLogin } = useContext(AuthContext);
+    const { login, loading, setLoading, providerLogin } = useContext(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
@@ -44,6 +44,7 @@ const Login = () => {
                         console.log(data);
                         localStorage.setItem('visapressDB-token', data.token);
                         form.reset();
+                        setLoading(false);
                         navigate(from, { replace: true });
                     });
 
@@ -77,10 +78,17 @@ const Login = () => {
                     .then(data => {
                         console.log(data);
                         localStorage.setItem('visapressDB-token', data.token);
+                        setLoading(false);
                         navigate(from, { replace: true });
                     });
             })
             .catch(error => setError(error.message))
+    }
+
+    if (loading) {
+        return <div className='text-center my-5'>
+            <Spinner animation="border" />
+        </div>
     }
 
     return (

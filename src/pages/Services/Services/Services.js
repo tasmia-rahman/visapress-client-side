@@ -1,19 +1,29 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Spinner } from 'react-bootstrap';
 import ServiceCard from '../ServiceCard/ServiceCard';
 import { Helmet } from 'react-helmet-async';
 
 const Services = () => {
     const [services, setServices] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch('http://localhost:5000/services')
             .then(res => res.json())
-            .then(data => setServices(data))
+            .then(data => {
+                setServices(data);
+                setLoading(false);
+            })
             .catch(err => console.error(err))
     }, []);
+
+    if (loading) {
+        return <div className='text-center my-5'>
+            <Spinner animation="border" />
+        </div>
+    }
 
     return (
         <div className='pb-5'>

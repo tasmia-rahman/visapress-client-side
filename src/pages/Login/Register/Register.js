@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Spinner } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
-    const { createUser, updateUserInfo } = useContext(AuthContext);
+    const { createUser, updateUserInfo, loading, setLoading } = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState(false);
 
@@ -24,6 +24,7 @@ const Register = () => {
                 const user = result.user;
                 form.reset();
                 setSuccess(true);
+                setLoading(false);
                 handleUpdateUserInfo(fullName, photoURL);
             })
             .catch(error => setError(error.message))
@@ -39,6 +40,13 @@ const Register = () => {
                 // An error occurred
             });
     }
+
+    if (loading) {
+        return <div className='text-center my-5'>
+            <Spinner animation="border" />
+        </div>
+    }
+
     return (
         <Container>
             <Helmet>
