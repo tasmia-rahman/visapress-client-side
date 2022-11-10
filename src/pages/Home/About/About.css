@@ -6,12 +6,13 @@
 }
 
 .about-div {
-    background-color: white;
+    background-color: rgb(249 250 251);
 }
 
 .about-icons {
     font-size: 40px;
-    color: #3ca1db;
+    color: rgb(190 18 60);
+    margin: 0 auto;
 }
 
 .btn-primary {

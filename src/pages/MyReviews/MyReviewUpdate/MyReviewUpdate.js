@@ -43,7 +43,7 @@ const MyReviewUpdate = () => {
             <h4 className='text-center my-4'>Service Name: <span className='red-color'>{serviceName}</span></h4>
             <div className='d-flex justify-center'>
                 <Form onSubmit={handleUpdateReview}>
-                    <FloatingLabel controlId="floatingTextarea2" label="Comments">
+                    <FloatingLabel controlId="floatingTextarea2" label="Review">
                         <Form.Control
                             as="textarea"
                             placeholder="Leave a comment here"

@@ -1,31 +1,29 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { FaGraduationCap } from "react-icons/fa";
-import { HiLibrary } from "react-icons/hi";
-import { HiViewBoards } from "react-icons/hi";
+import { HiBookmark, HiCheckCircle, HiLightningBolt } from "react-icons/hi";
 import './About.css';
 
 const About = () => {
     return (
-        <div>
-            <h3 className='text-center red-color title'>About</h3>
+        <div className='mt-5'>
+            {/* <h3 className='text-center red-color title'>About</h3> */}
             <div className='about-container text-center'>
                 <div className='about-div'>
-                    <FaGraduationCap className='about-icons mt-5 mb-3'></FaGraduationCap>
-                    <h4 className='mb-3'>Custom Courses</h4>
-                    <p className='mb-3 mx-4'>Professional language courses for online learning!</p>
-                    <Button className='mb-5'>Read More</Button>
+                    <HiCheckCircle className='about-icons mt-5 mb-3'></HiCheckCircle>
+                    <h4 className='mb-3'>Apply for visa</h4>
+                    <p className='mb-3 mx-4'>Find information and begin you application!</p>
+                    <Button className='mb-5'>Start Apply</Button>
                 </div>
                 <div className='about-div'>
-                    <HiLibrary className='about-icons mt-5 mb-3'></HiLibrary>
-                    <h4 className='mb-3'>Awesome Teachers</h4>
-                    <p className='mb-3 mx-4'>Teachers that help you build professional career!</p>
-                    <Button className='mb-5'>Read More</Button>
+                    <HiBookmark className='about-icons mt-5 mb-3'></HiBookmark>
+                    <h4 className='mb-3'>Book an appointment</h4>
+                    <p className='mb-3 mx-4'>Schedule your appointment with me on time!</p>
+                    <Button className='mb-5'>Book Now</Button>
                 </div>
                 <div className='about-div'>
-                    <HiViewBoards className='about-icons mt-5 mb-3'></HiViewBoards>
-                    <h4 className='mb-3'>Pro Dashboards</h4>
-                    <p className='mb-3 mx-4'>Responsive and retina ready dashboards for learning!</p>
+                    <HiLightningBolt className='about-icons mt-5 mb-3'></HiLightningBolt>
+                    <h4 className='mb-3'>Premium services</h4>
+                    <p className='mb-3 mx-4'>Enjoy a faster and more easy, more reliable service!</p>
                     <Button className='mb-5'>Read More</Button>
                 </div>
             </div>
