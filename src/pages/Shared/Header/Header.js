@@ -37,7 +37,7 @@ const Header = () => {
                             user?.uid ?
                                 <>
                                     <Link to='/my_reviews' className='nav-link'>My reviews</Link>
-                                    <Link to='/add_services' className='nav-link'>Add service</Link>
+                                    <Link to='/add_service' className='nav-link'>Add service</Link>
                                     <Link className='nav-link' onClick={handleLogOut}>Log out</Link>
                                 </>
                                 :
