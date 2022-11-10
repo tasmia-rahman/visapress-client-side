@@ -15,7 +15,7 @@ const MyReviewUpdate = () => {
         console.log(updatedReviewText);
         form.reset();
 
-        fetch(`http://localhost:5000/my_reviews/${_id}`, {
+        fetch(`https://visapress-server.vercel.app/my_reviews/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

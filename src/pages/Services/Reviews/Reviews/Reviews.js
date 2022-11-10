@@ -14,7 +14,7 @@ const Reviews = ({ service }) => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?serviceName=${name}`)
+        fetch(`https://visapress-server.vercel.app/reviews?serviceName=${name}`)
             .then(res => {
                 return res.json();
             })
@@ -38,7 +38,7 @@ const Reviews = ({ service }) => {
             reviewText
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://visapress-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

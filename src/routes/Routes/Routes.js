@@ -32,7 +32,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/services/:id',
                 element: <ServicePage></ServicePage>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://visapress-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/blog',
@@ -45,7 +45,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/my_reviews/:id',
                 element: <PrivateRoute><MyReviewUpdate></MyReviewUpdate></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/my_reviews/${params.id}`)
+                loader: ({ params }) => fetch(`https://visapress-server.vercel.app/my_reviews/${params.id}`)
             },
             {
                 path: '/add_service',

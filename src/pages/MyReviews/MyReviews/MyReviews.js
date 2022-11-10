@@ -10,7 +10,7 @@ const MyReviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/my_reviews?email=${user?.email}`, {
+        fetch(`https://visapress-server.vercel.app/my_reviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('visapressDB-token')}`
             }
@@ -30,7 +30,7 @@ const MyReviews = () => {
     const handleDeleteReview = id => {
         const proceed = window.confirm('Are you sure, you want to cancel this order');
         if (proceed) {
-            fetch(`http://localhost:5000/my_reviews/${id}`, {
+            fetch(`https://visapress-server.vercel.app/my_reviews/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('visapressDB-token')}`

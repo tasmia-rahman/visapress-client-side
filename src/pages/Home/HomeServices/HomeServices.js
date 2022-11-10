@@ -9,7 +9,7 @@ const HomeServices = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/home_services')
+        fetch('https://visapress-server.vercel.app/home_services')
             .then(res => res.json())
             .then(data => setServices(data))
             .catch(err => console.error(err))
