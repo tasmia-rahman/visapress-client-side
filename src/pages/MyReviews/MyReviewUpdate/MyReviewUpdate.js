@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import { HiPencilAlt, HiTrash } from 'react-icons/hi';
-import { Link } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
-const MyReviewCard = ({ review, handleDelete }) => {
+const MyReviewUpdate = () => {
+    const review = useLoaderData();
     const { _id, serviceName, date, reviewText } = review;
 
     return (
@@ -15,16 +15,10 @@ const MyReviewCard = ({ review, handleDelete }) => {
                     <Card.Text>
                         <span className='font-semibold'>Review:</span> {reviewText}
                     </Card.Text>
-                    <div className='d-flex justify-content-center'>
-                        <Link to={`/my_reviews/${_id}`} className='red-color text-2xl no-underline mr-5'>
-                            <HiPencilAlt></HiPencilAlt>
-                        </Link>
-                        <HiTrash onClick={() => handleDelete(_id)} className='red-color text-2xl no-underline'></HiTrash>
-                    </div>
                 </Card.Body>
             </Card>
         </div>
     );
 };
 
-export default MyReviewCard;
+export default MyReviewUpdate;

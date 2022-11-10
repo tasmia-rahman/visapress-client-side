@@ -3,6 +3,7 @@ import { Button, Container, FloatingLabel, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import ReviewCard from '../ReviewCard/ReviewCard';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Reviews = ({ service }) => {
     const { user } = useContext(AuthContext);
@@ -45,7 +46,7 @@ const Reviews = ({ service }) => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('Review added')
+                    toast.success('Review added successfully');
                     form.reset();
                 }
             })
@@ -53,6 +54,7 @@ const Reviews = ({ service }) => {
     }
     return (
         <Container className='mb-5'>
+            <Toaster />
             <div>
                 {
                     reviews.map(review => <ReviewCard review={review}></ReviewCard>)
