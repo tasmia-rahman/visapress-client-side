@@ -1,10 +1,14 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import './Blog.css';
+import { Helmet } from 'react-helmet-async';
 
 const Blog = () => {
     return (
         <Container>
+            <Helmet>
+                <title>Blog</title>
+            </Helmet>
             <h2 className='text-center title red-color mb-5'>Blog</h2>
             <div className='blog'>
                 <h4 className='red-color'>Difference between SQL and NoSQL?</h4>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Container, FloatingLabel, Form } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const MyReviewUpdate = () => {
     const review = useLoaderData();
@@ -34,6 +35,9 @@ const MyReviewUpdate = () => {
 
     return (
         <Container className='mb-5'>
+            <Helmet>
+                <title>My Reviews</title>
+            </Helmet>
             <Toaster />
             <h3 className='text-center red-color title'>Edit Review</h3>
             <h4 className='text-center my-4'>Service Name: <span className='red-color'>{serviceName}</span></h4>

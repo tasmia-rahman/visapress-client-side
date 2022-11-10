@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
     const { createUser, updateUserInfo } = useContext(AuthContext);
@@ -40,6 +41,9 @@ const Register = () => {
     }
     return (
         <Container>
+            <Helmet>
+                <title>Register</title>
+            </Helmet>
             <h3 className='text-center mb-3 red-color title'>Registration</h3>
             <div className='w-5/12 mx-auto'>
                 <Form onSubmit={handleSubmit}>

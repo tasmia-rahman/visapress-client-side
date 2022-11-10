@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Container, FloatingLabel, Form } from 'react-bootstrap';
 import toast, { Toaster } from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const AddService = () => {
 
@@ -40,6 +41,9 @@ const AddService = () => {
     return (
         <Container className='my-5'>
             <Toaster />
+            <Helmet>
+                <title>Add Service</title>
+            </Helmet>
             <h4 className='red-color text-center mb-3'>Add Service</h4>
             <div className='w-5/12 mx-auto'>
                 <Form onSubmit={handleAddService}>

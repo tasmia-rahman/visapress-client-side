@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import MyReviewCard from '../MyReviewCard/MyReviewCard';
 import toast, { Toaster } from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const MyReviews = () => {
     const { user, logout } = useContext(AuthContext);
@@ -49,6 +50,9 @@ const MyReviews = () => {
 
     return (
         <Container className='my-5'>
+            <Helmet>
+                <title>My Reviews</title>
+            </Helmet>
             <Toaster />
             <h3 className='text-center red-color title mb-4'>My Reviews</h3>
             {

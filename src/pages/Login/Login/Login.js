@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from "firebase/auth";
 import { Container } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const { login, setLoading, providerLogin } = useContext(AuthContext);
@@ -84,6 +85,9 @@ const Login = () => {
 
     return (
         <Container>
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
             <h3 className='text-center mb-3 red-color title'>Login</h3>
             <div className='w-5/12 mx-auto'>
                 <Form onSubmit={handleSubmit}>
