@@ -26,6 +26,7 @@ const AuthProvider = ({ children }) => {
 
     const logout = () => {
         setLoading(true);
+        localStorage.removeItem('visapressDB-token');
         return signOut(auth);
     }
 

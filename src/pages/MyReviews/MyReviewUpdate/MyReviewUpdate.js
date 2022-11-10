@@ -18,6 +18,7 @@ const MyReviewUpdate = () => {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('visapressDB-token')}`
             },
             body: JSON.stringify({ reviewText: updatedReviewText })
         })

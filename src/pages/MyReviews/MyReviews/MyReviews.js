@@ -5,25 +5,35 @@ import MyReviewCard from '../MyReviewCard/MyReviewCard';
 import toast, { Toaster } from 'react-hot-toast';
 
 const MyReviews = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/my_reviews?email=${user?.email}`)
+        fetch(`http://localhost:5000/my_reviews?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('visapressDB-token')}`
+            }
+        })
             .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    return logout();
+                }
                 return res.json();
             })
             .then(data => {
                 setReviews(data);
             })
             .catch(err => console.error(err))
-    }, [user?.email])
+    }, [user?.email, logout])
 
     const handleDeleteReview = id => {
         const proceed = window.confirm('Are you sure, you want to cancel this order');
         if (proceed) {
             fetch(`http://localhost:5000/my_reviews/${id}`, {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('visapressDB-token')}`
+                }
             })
                 .then(res => res.json())
                 .then(data => {
