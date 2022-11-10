@@ -28,7 +28,7 @@ const MyReviews = () => {
     }, [user?.email, logout])
 
     const handleDeleteReview = id => {
-        const proceed = window.confirm('Are you sure, you want to cancel this order');
+        const proceed = window.confirm('Are you sure, you want to cancel this order?');
         if (proceed) {
             fetch(`https://visapress-server.vercel.app/my_reviews/${id}`, {
                 method: 'DELETE',
