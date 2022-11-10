@@ -58,12 +58,14 @@ const Reviews = ({ service }) => {
     return (
         <Container className='mb-5'>
             <Toaster />
-            <div>
-                {
-                    reviews.map(review => <ReviewCard review={review}></ReviewCard>)
-                }
+            <div className='d-flex justify-center'>
+                <div>
+                    {
+                        reviews.map(review => <ReviewCard review={review}></ReviewCard>)
+                    }
+                </div>
             </div>
-            <div>
+            <div className='d-flex justify-center'>
                 {
                     user?.uid ?
                         <Form onSubmit={handleAddReview}>
